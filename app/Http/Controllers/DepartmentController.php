@@ -14,7 +14,7 @@ class DepartmentController extends Controller
      */
     public function index()
     {
-        $dept = Department::orderby('id', 'desc'); //show only 5 items at a time in descending order
+        $dept = Department::all(); //show only 5 items at a time in descending order
 
         return view('department.index', compact('dept'));
     }
