@@ -14,7 +14,9 @@
     </head>
     <body>
 
-
+<div class="container">
+<div class="row">
+  <div class="col-md-12">
 
         <div class="wrapper">
             <!-- Sidebar Holder -->
@@ -78,7 +80,7 @@
             </nav>
 
             <!-- Page Content Holder -->
-            <div id="">
+            <div id="content">
 
                 <nav class="navbar navbar-default">
                     <div class="container-fluid">
@@ -105,8 +107,9 @@
 
             </div>
         </div>
-
-
+      </div>
+  </div>
+</div>
 
 
 
