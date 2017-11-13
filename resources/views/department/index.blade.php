@@ -19,18 +19,7 @@
                                   </thead>
 
                                   <tbody>
-                                      @foreach ($dept as $key)
-                                      <tr>
-
-                                          <td>{{ $key->code }}</td>
-                                          <td>{{ $key->name }}</td>
-
-                                          <td>
-                                          <a href="{{ URL::to('department/'.$key->id.'/edit') }}" class="btn btn-info pull-left" style="margin-right: 3px;">Edit</a>
-
-                                        </td>
-                                      </tr>
-                                      @endforeach
+      
                                   </tbody>
 
                               </table>
