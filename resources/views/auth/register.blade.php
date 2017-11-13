@@ -25,6 +25,20 @@
                             </div>
                         </div>
 
+                        <div class="form-group{{ $errors->has('regno') ? ' has-error' : '' }}">
+                            <label for="regno" class="col-md-4 control-label">Registration No:</label>
+
+                            <div class="col-md-6">
+                                <input id="regno" type="text" class="form-control" name="regno" value="{{ old('regno') }}" required>
+
+                                @if ($errors->has('regno'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('regno') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
                         <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
                             <label for="phone" class="col-md-4 control-label">Mobile No:</label>
 
