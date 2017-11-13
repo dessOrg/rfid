@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
+use App\Department;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class HomeController extends Controller
 {
@@ -25,4 +28,40 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    public function red()
+    {
+
+        $role = Auth::user()->role;
+
+        if($role === 'Admin'){
+          return view('admin.index');
+        }else {
+          return view('home');
+        }
+
+    }
+
+
+    public function departments()
+    {
+
+        $name = Department::get();
+        return view('index')->with('departments', $name);
+    }
+
+    public function update(Request $request) {
+    $this->validate($request, [
+        'department'=>'required|max:100'
+    ]);
+    $id = Auth::user()->id;
+
+    $user = User::findOrFail($id);
+    $user->department = $request->input('department');
+    $user->save();
+
+    return Redirect::to('/');
+
+}
+
 }
