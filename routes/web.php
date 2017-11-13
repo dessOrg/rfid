@@ -23,4 +23,4 @@ Route::get('/red', 'HomeController@red')->name('red');
 
 Route::resource('users', 'UserController');
 
-Route::resource('roles', 'DepartmentController');
+Route::resource('departments', 'DepartmentController');
