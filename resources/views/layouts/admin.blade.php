@@ -52,7 +52,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="{{ route('users.index') }}">
+                        <a href="{{ route('departments.index') }}">
                             <i class="glyphicon glyphicon-link"></i>
                             Departments
                         </a>
