@@ -58,8 +58,8 @@ i, span {
 }
 
 #sidebar {
-    min-width: 80px;
-    max-width: 80px;
+    min-width: 100px;
+    max-width: 100px;
     background: #7386D5;
     color: #fff;
     transition: all 0.3s;
