@@ -14,9 +14,9 @@ class DepartmentController extends Controller
      */
     public function index()
     {
-        //$dept = Department::get(); //show only 5 items at a time in descending order
+        $dept = Department::get(); //show only 5 items at a time in descending order
 
-        return view('department.index');
+        return view('department.index')->with('dept', $dept);
     }
 
     /**
