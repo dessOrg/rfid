@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-        <title>Collapsible sidebar using Bootstrap 3</title>
+        <title>RFID Access</title>
 
          <!-- Bootstrap CSS CDN -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -52,9 +52,9 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="{{ route('users.index') }}">
                             <i class="glyphicon glyphicon-link"></i>
-                            Portfolio
+                            Departments
                         </a>
                     </li>
                     <li>

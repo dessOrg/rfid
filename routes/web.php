@@ -20,3 +20,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/userdepartment', 'HomeController@department');
 Route::get('/red', 'HomeController@red')->name('red');
+
+Route::resource('users', 'UserController');
+
+Route::resource('roles', 'DepartmentController');

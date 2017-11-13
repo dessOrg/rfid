@@ -4,22 +4,40 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
-                    <div class="panel-heading"><h3>Posts</h3></div>
-                    <div class="panel-heading">Page {{ $posts->currentPage() }} of {{ $posts->lastPage() }}</div>
-                    @foreach ($posts as $post)
+                    <div class="panel-heading"><h3>Departments</h3></div>
+                    <div class="panel-heading"></div>
+
                         <div class="panel-body">
-                            <li style="list-style-type:disc">
-                                <a href="{{ route('posts.show', $post->id ) }}"><b>{{ $post->title }}</b><br>
-                                    <p class="teaser">
-                                       {{  str_limit($post->body, 100) }} {{-- Limit teaser to 100 characters --}}
-                                    </p>
-                                </a>
-                            </li>
+                          <div class="table-responsive">
+                              <table class="table table-bordered table-striped">
+                                  <thead>
+                                      <tr>
+                                          <th>Code</th>
+                                          <th>Name</th>
+                                          <th>Operation</th>
+                                      </tr>
+                                  </thead>
+
+                                  <tbody>
+                                      @foreach ($dept as $key)
+                                      <tr>
+
+                                          <td>{{ $key->code }}</td>
+                                          <td>{{ $key->name }}</td>
+
+                                          <td>
+                                          <a href="{{ URL::to('department/'.$key->id.'/edit') }}" class="btn btn-info pull-left" style="margin-right: 3px;">Edit</a>
+
+                                        </td>
+                                      </tr>
+                                      @endforeach
+                                  </tbody>
+
+                              </table>
+                          </div>
                         </div>
-                    @endforeach
                     </div>
                     <div class="text-center">
-                        {!! $posts->links() !!}
                     </div>
                 </div>
             </div>
