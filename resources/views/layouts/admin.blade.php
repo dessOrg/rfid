@@ -78,7 +78,7 @@
             </nav>
 
             <!-- Page Content Holder -->
-            <div id="content">
+            <div id="">
 
                 <nav class="navbar navbar-default">
                     <div class="container-fluid">
