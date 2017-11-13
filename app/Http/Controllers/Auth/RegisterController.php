@@ -71,7 +71,7 @@ class RegisterController extends Controller
             'regno' => $data['regno'],
             'phone' => $data['phone'],
             'department' => '0',
-            'role' => $data['role'],
+            'role' => 'Admin',
             'password' => bcrypt($data['password']),
         ]);
     }
