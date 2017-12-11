@@ -9,7 +9,7 @@ class DepartmentController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
+    *
      * @return \Illuminate\Http\Response
      */
     public function index()
@@ -26,7 +26,7 @@ class DepartmentController extends Controller
      */
     public function create()
     {
-        //
+       return view('department.create');
     }
 
     /**
@@ -37,7 +37,13 @@ class DepartmentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        request()->validate([
+            'name' => 'required',
+            'code' => 'required',
+        ]);
+        Department::create($request->all());
+        return redirect()->route('departments.index')
+            ->with('success', 'Department created successfully');
     }
 
     /**
@@ -48,7 +54,8 @@ class DepartmentController extends Controller
      */
     public function show($id)
     {
-        //
+        $department = Department::find($id);
+        return view('department.edit', compact('department'));
     }
 
     /**
