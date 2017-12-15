@@ -3,10 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Department;
+use Auth;
 use Illuminate\Http\Request;
 
 class DepartmentController extends Controller
 {
+    /**
+     * Create a new controller instances.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+       $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
     *

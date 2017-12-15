@@ -20,26 +20,18 @@
             <!-- Sidebar Holder -->
             <nav id="sidebar">
                 <div class="sidebar-header">
-                    <h3>Bootstrap Sidebar</h3>
+                    <h3>RFID Dashboard</h3>
                     <strong>BS</strong>
                 </div>
 
                 <ul class="list-unstyled components">
                     <li class="active">
-                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">
-                            <i class="glyphicon glyphicon-home"></i>
-                            Home
-                        </a>
-                        <ul class="collapse list-unstyled" id="homeSubmenu">
-                            <li><a href="#">Home 1</a></li>
-                            <li><a href="#">Home 2</a></li>
-                            <li><a href="#">Home 3</a></li>
-                        </ul>
+                            <a href="{{ url('home') }}">Home </a>
                     </li>
                     <li>
-                        <a href="#">
-                            <i class="glyphicon glyphicon-briefcase"></i>
-                            About
+                        <a href="{{ route('tags.index') }}">
+                            <i class="glyphicon glyphicon-list"></i>
+                            Tags
                         </a>
                         <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">
                             <i class="glyphicon glyphicon-duplicate"></i>

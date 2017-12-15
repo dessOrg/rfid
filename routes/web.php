@@ -24,3 +24,4 @@ Route::get('/red', 'HomeController@red')->name('red');
 Route::resource('users', 'UserController');
 
 Route::resource('departments', 'DepartmentController');
+Route::resource('tags', 'TagController');

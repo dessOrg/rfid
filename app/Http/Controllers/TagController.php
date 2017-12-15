@@ -2,10 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
+use App\Tag;
 use Illuminate\Http\Request;
 
 class TagController extends Controller
 {
+   /*
+    * Create a new controller instance.
+    * 
+    * @return void
+    */ 
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +24,8 @@ class TagController extends Controller
      */
     public function index()
     {
-        //
+        $tags = Tag::get();
+       return view('tags.index', compact('tags'));
     }
 
     /**
@@ -23,7 +35,7 @@ class TagController extends Controller
      */
     public function create()
     {
-        //
+        return view('tags.create');
     }
 
     /**
