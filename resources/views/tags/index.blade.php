@@ -4,19 +4,8 @@
         <div class="row">
          <div class="col-md-5 col-md-offset-3" style="margin-bottom:10px;">
           <div class="col-md-2 col-xs-12 pull-right">
-    {{-- using the laravel HTML Form Collective to create our form --}}
-    {{ form::open(array('route' => 'tags.store')) }}   
-
-       <div class="form-group">
-         <div class="col-md-2 col-xs-12">
-            {{ form::label('tagno', 'Tag Number') }}
-         </div>
-         <div class="col-md-6 col-xs-12">
-            {{ form::text('tagno', null, array('class' => 'form-control')) }}         
-         </div>
-         <div class="col-md-2 col-xs-12">
-             {{ form::submit('Create Tag', array('class' => 'btn btn-success btn-lg btn-block')) }}      
-              {{ form::close() }}
+ 
+              <a href="{{ route('tags.create') }}"><span class="btn btn-warning">create tag</span></a>
          </div>         
 
         </div>

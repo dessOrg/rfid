@@ -10,7 +10,7 @@
         <hr>
 
     {{-- using the laravel HTML Form Collective to create our form --}}
-        {{ form::open(array('route' => 'tags.store')) }}
+        {{ Form::open(array('route' => 'tags.store')) }}
 
         <div class="form-group">
             {{ form::label('tagno', 'Tag Number') }}
