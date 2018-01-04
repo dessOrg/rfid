@@ -29,6 +29,13 @@
                             <a href="{{ url('home') }}">Home </a>
                     </li>
                     <li>
+
+                            <a href="{{ route('users.index') }}">
+                              <i class="fa fa-users"></i>
+                              Users
+                             </a>
+                    </li>
+                    <li>
                         <a href="{{ route('tags.index') }}">
                             <i class="glyphicon glyphicon-list"></i>
                             Tags

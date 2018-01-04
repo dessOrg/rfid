@@ -10,9 +10,9 @@ class TagController extends Controller
 {
    /*
     * Create a new controller instance.
-    * 
+    *
     * @return void
-    */ 
+    */
     public function __construct()
     {
         $this->middleware('auth');
@@ -46,7 +46,12 @@ class TagController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        request()->validate([
+            'tagno' => 'required',
+        ]);
+        Tag::create($request->all());
+        return redirect()->route('tags.index')
+            ->with('success', 'Tag created successfully');
     }
 
     /**

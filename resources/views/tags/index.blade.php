@@ -2,11 +2,32 @@
 @section('content')
     <div class="container">
         <div class="row">
-         <div class="col-md-5 col-md-offset-3" style="margin-bottom:10px;">
-          <div class="col-md-2 col-xs-12 pull-right">
- 
-              <a href="{{ route('tags.create') }}"><span class="btn btn-warning">create tag</span></a>
-         </div>         
+         <div class="col-md-12 " style="margin-bottom:10px;">
+          <div class="col-md-12 col-xs-12 ">
+
+            <div class="col-md-8 col-md-offset-2">
+
+            <h1>create new Tag NO</h1>
+            <hr>
+
+        {{-- using the laravel HTML Form Collective to create our form --}}
+            {{ Form::open(array('route' => 'tags.store')) }}
+
+            <div class="form-group">
+              <div class="col-md-2">
+                {{ form::label('tagno', 'Tag Number') }}
+              </div>
+              <div class="col-md-6">
+                {{ form::text('tagno', null, array('class' => 'form-control')) }}
+                {{ form::hidden('status', '0', array('class' => 'form-control')) }}
+              </div>
+              <div class="col-md-4">
+                {{ form::submit('Create ', array('class' => 'btn btn-success btn-lg btn-block')) }}
+              </div>
+                {{ form::close() }}
+            </div>
+            </div>
+         </div>
 
         </div>
        </div>
@@ -15,7 +36,7 @@
 
                 <div class="panel panel-default">
                     <div class="panel-heading"><h3>registered Tags Numbers</h3></div>
-                    
+
                         <div class="panel-body">
                           <div class="table-responsive">
                               <table class="table table-bordered table-striped">
