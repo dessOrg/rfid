@@ -18,10 +18,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::post('/userdepartment', 'HomeController@department');
-Route::get('/red', 'HomeController@red')->name('red');
+Route::get('/setdepart', 'HomeController@department');
+Route::post('/userdepart', 'HomeController@update');
 
 Route::resource('users', 'UserController');
 
 Route::resource('departments', 'DepartmentController');
 Route::resource('tags', 'TagController');
+Route::resource('cards', 'CardController');

@@ -74,7 +74,7 @@
                 </div>
 
                 <div class="links">
-                    <form class="form-horizontal" method="POST" action="{{ route('userdepartment') }}">
+                    <form class="form-horizontal" method="POST" action="{{ url('userdepart') }}">
                         {{ csrf_field() }}
 
 

@@ -44,7 +44,7 @@ class HomeController extends Controller
     }
 
 
-    public function departments()
+    public function department()
     {
 
         $name = Department::get();

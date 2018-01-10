@@ -3,10 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\User;
-use App\Card;
 
-class UserController extends Controller
+class CardController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +13,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::get();
-        $cards = Card::with('user')->get();
-        return view('users.index', compact('users','cards'));
+        //
     }
 
     /**
