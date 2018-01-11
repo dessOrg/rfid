@@ -3,6 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Redirect;
+use Validator;
+use App\User;
+use App\Card;
 
 class CardController extends Controller
 {
@@ -34,7 +39,30 @@ class CardController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $rules = array(
+            'tagno' => 'required|max:8|min:6|unique:cards',
+        );
+
+        $validator =  Validator::make(Input::all(), $rules);
+        $id = Input::get('user_id');
+
+        if ($validator->fails()) {
+
+            $messages = $validator->messages();
+
+            return Redirect::to('/users/'.$id)
+                ->withErrors($validator);
+
+        }else {
+             $card = new Card;
+             $card->user_id = $id;
+             $card->tagno = Input::get('tagno');
+             $card->status = "Active";
+             $card->save();
+
+             return redirect()->route('users.index')
+                ->with('success', 'Tag No Assigned Successfully'); 
+        }
     }
 
     /**

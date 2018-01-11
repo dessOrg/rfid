@@ -40,7 +40,7 @@
                                           <td>{{ $key->department }}</td>
                                                                                                       
                                            <td>
-                                          <a href="{{route ('users.edit', $key->id) }}" class="btn btn-info pull-left" style="margin-right: 3px;">Assign Tag</a>
+                                          <a href="{{route ('users.show', $key->id) }}" class="btn btn-info pull-left" style="margin-right: 3px;">Assign Tag</a>
 
                                         </td>
                                       </tr>
