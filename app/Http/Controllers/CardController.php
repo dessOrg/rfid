@@ -77,7 +77,8 @@ class CardController extends Controller
      */
     public function show($id)
     {
-        //
+        $card = Card::where('user_id', '=', $id)->first();
+        return view('tags.edit', compact('card'));
     }
 
     /**

@@ -12,7 +12,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+   <link href="css/style.css" rel="stylesheet"> 
+   <link href="../css/style.css" rel="stylesheet">
 </head>
 <body style="">
     <div id="app">
@@ -47,6 +48,7 @@
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>
                             @else
+                                <li><a href="{{ route('cards.show', Auth::user()->id) }}">My Card</a></li>
                                 @if (Auth::user()->role == "Admin")
                                 <li><a href="{{ route('admin.index') }}">Admin</a></li>
                                 @endif

@@ -34,3 +34,13 @@ body {
     
 
 }
+
+.card {
+    margin-top: 180px;
+    background-color: #fff;
+}
+
+.avatar img {
+     height:40px;
+     width: auto;
+ }
