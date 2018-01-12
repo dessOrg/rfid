@@ -60,6 +60,10 @@ class CardController extends Controller
              $card->status = "Active";
              $card->save();
 
+             $user = User::find($id);
+             $user->isActive = 1;
+             $user->save();
+
              return redirect()->route('users.index')
                 ->with('success', 'Tag No Assigned Successfully'); 
         }

@@ -67,11 +67,11 @@
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('role') ? ' has-error' : '' }}">
-                            <label for="role" class="col-md-4 control-label">User Category</label>
+                        <div class="form-group{{ $errors->has('category') ? ' has-error' : '' }}">
+                            <label for="category" class="col-md-4 control-label">User Category</label>
 
                             <div class="col-md-6">
-                                 <select class="form-control" id="role" name="role" required="true" value="{{ old('role') }}" style="background-color : inherit">
+                                 <select class="form-control" id="category" name="category" required="true" value="{{ old('category') }}" style="background-color : inherit">
                                      <option  value="">Select Category</option>
                                      <option  value="Student">Student</option>
                                       <option  value="Lecturer">Lecturer</option>

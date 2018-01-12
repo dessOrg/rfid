@@ -2,17 +2,41 @@
 @section('content')
     <div class="container">
         <div class="row">
-         <div class="col-md-5 col-md-offset-3" style="margin-bottom:10px;">
-          <div class="col-md-2 col-xs-12 pull-right">
-            <a href="{{ route('departments.create') }}">
-               <button class="btn btn-warning"><i class="fa fa-plus"></i>Create Departments</button></a>    
-         </div>
-         </div>
+         <div class="col-md-10 " style="margin-bottom:10px;">
+
+                <div class="col-md-12">
+
+                <h1>Create New Department</h1>
+                <hr>
+
+            {{-- Using the Laravel HTML Form Collective to create our form --}}
+                {{ Form::open(array('route' => 'departments.store')) }}
+
+                <div class="form-group">
+                  <div class="col-md-4">
+                    {{ Form::label('title', 'Title') }}
+                    {{ Form::text('name', null, array('class' => 'form-control')) }}
+                  </div>
+                  <div class="col-md-4">
+                    {{ Form::label('code', 'Department Code') }}
+                    {{ Form::text('code', null, array('class' => 'form-control')) }}
+                  </div>
+                  <div class="col-md-4" style="padding-top:20px;">
+                    {{ Form::submit('Create Department', array('class' => 'btn btn-success btn-lg btn-block')) }}
+                  </div>
+                    {{ Form::close() }}
+                </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <hr>
+
          <div class="col-md-10 col-md-offset-1">
 
                 <div class="panel panel-default">
                     <div class="panel-heading"><h3>Departments</h3></div>
-                    
+
                         <div class="panel-body">
                           <div class="table-responsive">
                               <table class="table table-bordered table-striped">

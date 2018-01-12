@@ -1,0 +1,36 @@
+
+body {
+
+    background-image : url("/images/image4.jpeg");
+    background-repeat: no-repeat;
+    background-size: 100vh;
+    background-color: #fff;
+    background-position: 50% -50%;
+}
+
+.wpanel {
+
+    margin-top : 10px;
+    color :#000;
+
+}
+
+.wbody {
+    margin-top:50px;
+
+}
+
+.admincon {
+    background-image: url("/images/image6.jpeg");
+    background-repeat: no-repeat;
+    background-color: #fff;
+    background-position: 50% 50%;
+    height:200hv;
+}
+
+.adpanel {
+    height : 400px;
+    padding-top:10px;
+    
+
+}

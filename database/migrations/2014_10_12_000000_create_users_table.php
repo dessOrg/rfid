@@ -18,10 +18,12 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('regno')->unique();
             $table->string('department');
+            $table->string('category');
             $table->string('role');
             $table->string('phone')->unique();
             $table->string('email')->unique();
             $table->string('password');
+            $table->boolean('isActive')->default(false);
             $table->rememberToken();
             $table->timestamps();
         });

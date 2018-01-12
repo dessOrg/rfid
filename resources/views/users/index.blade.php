@@ -28,10 +28,8 @@
 
                                   <tbody>
                                   @foreach ($users as $key)
-                                   @foreach ($cards as $c )
-                                     @if ($key->id == $c->user_id)
-                                     @else
-                                      <tr>
+                                         
+                                       <tr>
 
                                           <td>{{ $key->regno }}</td>
                                           <td>{{ $key->name }}</td>
@@ -44,9 +42,7 @@
 
                                         </td>
                                       </tr>
-                                      @endif
-                                      @endforeach
-                                      @endforeach
+                                    @endforeach
                                   </tbody>
 
                               </table>
@@ -61,7 +57,7 @@
          <div class="col-md-10 col-md-offset-1">
                                                                                                                   
                 <div class="panel panel-default">                                                                                                                  
-                    <div class="panel-heading"><h3>Users RFID Cards</h3></div>                                                                            
+                    <div class="panel-heading"><h3>Users With RFID Cards</h3></div>                                                                            
                     <div class="panel-body">
                           <div class="table-responsive">
                               <table class="table table-bordered table-striped">
@@ -72,7 +68,9 @@
                                           <th>Email</th>
                                           <th>Phone NO</th>
                                           <th>Department</th>
-                                          <th>Role</th>
+                                          <th>Category</th>
+                                          <th>Card No </th>
+                                          <th>Status </th>
                                       </tr>
                                   </thead>
 
@@ -85,9 +83,9 @@
                                           <td>{{ $key->user->email }}</td>
                                           <td>{{ $key->user->phone }}</td>
                                           <td>{{ $key->user->department }}</td>
-                                          <td>{{ $key->user->role }}</td>
+                                          <td>{{ $key->user->category }}</td>
                                           <td>{{ $key->tagno }} </div>                
-                                          <td>{{ $key->tatus }} </div>
+                                          <td>{{ $key->status }} </div>
                                        </tr>
                                        @endforeach
                                    </tbody>
