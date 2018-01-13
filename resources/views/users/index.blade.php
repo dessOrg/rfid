@@ -65,8 +65,6 @@
                                       <tr>
                                           <th>Reg No</th>
                                           <th>Name</th>
-                                          <th>Email</th>
-                                          <th>Phone NO</th>
                                           <th>Department</th>
                                           <th>Category</th>
                                           <th>Card No </th>
@@ -80,12 +78,11 @@
 
                                           <td>{{ $key->user->regno }}</td>
                                           <td>{{ $key->user->name }}</td>
-                                          <td>{{ $key->user->email }}</td>
-                                          <td>{{ $key->user->phone }}</td>
                                           <td>{{ $key->user->department }}</td>
                                           <td>{{ $key->user->category }}</td>
                                           <td>{{ $key->tagno }} </div>                
                                           <td>{{ $key->status }} </div>
+                                          <td><a href="{{ url('card'. $key->id) }}"><span class="btn btn-info">View</span></a></td>
                                        </tr>
                                        @endforeach
                                    </tbody>

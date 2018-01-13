@@ -18,4 +18,8 @@ class Card extends Model
         return $this->belongsTo('App\User');
     }
 
+    public function logs() {
+       return $this->hasMany('App\Log');
+    }
+
 }

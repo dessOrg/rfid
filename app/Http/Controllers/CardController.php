@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Redirect;
 use Validator;
 use App\User;
 use App\Card;
+use App\Log;
 
 class CardController extends Controller
 {
@@ -78,7 +79,8 @@ class CardController extends Controller
     public function show($id)
     {
         $card = Card::where('user_id', '=', $id)->first();
-        return view('tags.edit', compact('card'));
+        $logs = Log::where('card_id', '=', $card->id)->get();
+        return view('tags.edit', compact('card', 'logs'));
     }
 
     /**

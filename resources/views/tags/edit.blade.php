@@ -28,11 +28,13 @@
 
       <div><strong>Category : </strong>{{ $card->user->category}}</div>
       <div><strong>Card No: </strong> {{ $card->tagno }} </div>
+      <div><strong>Status: </strong> {{ $card->status }} </div>
    </div>
-   <div class="col-md-4">
+   <div class="col-md-4 text-center">
       <div class="avatar">
       <img src="/images/avatar.png" alt="Profile Photo" style=" height:100px" >
       </div>
+      <h4>T.U.M</h4>
       </div>
       </div>
       <div style="margin:-1px;">
@@ -43,9 +45,43 @@
    </div>
    <div class="text-center">
     <div class="col-md-12" style="padding-top:20px;">
-    <a href="{{ url('deactivat'. $card->id) }}"><span class="btn btn-danger">DEACTIVATE<span><a> 
+    <a href="{{ url('deactivate'. $card->id) }}">
+     @if ( $card->status == "Active")
+        <span class="btn btn-danger">DEACTIVATE</span>
+     @else
+        <span class="btn btn-success">ACTIVATE</span>
+     @endif
+     <a> 
    </div>
    </div>
+   </div>
+
+   <div class="col-md-12">
+    <div class="panel panel-default">
+    <div class="panel-heading">Access Cards Logs</div>
+    <div class="panel-body">
+     <div class="table-responsive">
+     <table class="table table-bordered table-striped">
+      <thead> 
+        <tr>
+          <th>#</th>
+          <th>Date</th>
+          <th>status</th>
+        </tr>
+      </thead>
+      <tbody>
+      @foreach($logs as $key )
+        <tr>
+          <td>{{ $key->id }}</td>
+          <td>{{ $key->created_at }}</td>
+          <td>{{ $key->status }} </td>
+        </tr>
+      @endforeach
+      </tbody>
+     </table>
+    </div>
+    </div>
+    </div>
    </div>
    @endif
   </div>

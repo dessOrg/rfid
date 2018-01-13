@@ -37,19 +37,11 @@
                              </a>
                     </li>
                     <li>
-                        <a href="{{ route('tags.index') }}">
+                        <a href="{{ url('logs') }}">
                             <i class="glyphicon glyphicon-list"></i>
-                            Tags
+                            Access Logs
                         </a>
-                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">
-                            <i class="glyphicon glyphicon-duplicate"></i>
-                            Pages
-                        </a>
-                        <ul class="collapse list-unstyled" id="pageSubmenu">
-                            <li><a href="#">Page 1</a></li>
-                            <li><a href="#">Page 2</a></li>
-                            <li><a href="#">Page 3</a></li>
-                        </ul>
+                       
                     </li>
                     <li>
                         <a href="{{ route('departments.index') }}">
@@ -57,24 +49,10 @@
                             Departments
                         </a>
                     </li>
-                    <li>
-                        <a href="#">
-                            <i class="glyphicon glyphicon-paperclip"></i>
-                            FAQ
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="glyphicon glyphicon-send"></i>
-                            Contact
-                        </a>
-                    </li>
+                   
                 </ul>
 
-                <ul class="list-unstyled CTAs">
-                    <li><a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a></li>
-                    <li><a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a></li>
-                </ul>
+                
             </nav>
 
             <!-- Page Content Holder -->
@@ -97,7 +75,7 @@
 
                               <!-- Branding Image -->
                               <a class="navbar-brand" href="{{ url('/') }}">
-                                  {{ config('app.name', 'Laravel') }}
+                                  {{ config('app.name', 'RFID') }}
                               </a>
                           </div>
 
@@ -117,6 +95,7 @@
                                           @if (Auth::user()->role == "Admin")
                                           <li><a href="{{ route('admin.index') }}">Admin</a></li>
                                           @endif
+                                      
                                       <li class="dropdown">
                                           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                                               {{ Auth::user()->name }} <span class="caret"></span>

@@ -20,6 +20,9 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/setdepart', 'HomeController@department');
 Route::post('/userdepart', 'HomeController@update');
+Route::get('/deactivate{id}', 'HomeController@deactivate');
+Route::get('/card{id}', 'HomeController@cardinfo');
+Route::get('/logs', 'HomeController@logs');
 
 Route::resource('admin', 'AdminController');
 Route::resource('users', 'UserController');

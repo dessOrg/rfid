@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\User;
 use App\Department;
+use App\Card;
+use App\Log;
 use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
@@ -63,6 +65,33 @@ class HomeController extends Controller
 
     return Redirect::to('/');
 
+}
+
+public function deactivate($id) {
+    $card = Card::find($id);
+    if($card->status == "Active") {
+       $card->status = "Inactive";
+       $card->save();
+    } else{
+       $card->status = "Active";
+       $card->save();
+    }
+
+
+    return Redirect::to('/cards/'. $id);
+}
+
+public function cardinfo($id) {
+   $card = Card::find($id);
+   $logs = Log::where('card_id', '=', $card->id)->get();
+   return view('tags.edit', compact('card', 'logs'));
+}
+
+public function logs() 
+{
+    $logs = Log::get();
+
+    return view('tags.logs', compact('logs'));
 }
 
 }
