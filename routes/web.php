@@ -23,6 +23,10 @@ Route::post('/userdepart', 'HomeController@update');
 Route::get('/deactivate{id}', 'HomeController@deactivate');
 Route::get('/card{id}', 'HomeController@cardinfo');
 Route::get('/logs', 'HomeController@logs');
+Route::get('/editcard{id}', 'HomeController@getcard');
+Route::post('/updatecard', 'HomeController@updatecard');
+Route::post('/departments/{id}', 'DepartmentController@edit');
+Route::get('department/destroy/{id}', 'DepartmentController@destroy');
 
 Route::resource('admin', 'AdminController');
 Route::resource('users', 'UserController');

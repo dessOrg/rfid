@@ -83,6 +83,7 @@
                                           <td>{{ $key->tagno }} </div>                
                                           <td>{{ $key->status }} </div>
                                           <td><a href="{{ url('card'. $key->id) }}"><span class="btn btn-info">View</span></a></td>
+                                          <td><a href="{{ url('editcard'. $key->id) }}"><i class="fa fa-pencil fa-fw"></i></a></td>
                                        </tr>
                                        @endforeach
                                    </tbody>

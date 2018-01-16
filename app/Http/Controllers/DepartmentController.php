@@ -74,9 +74,19 @@ class DepartmentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'code' => 'required',
+            'name' => 'required',
+        ]);
+
+        $department = Department::find($id);
+        $department->code = $request->input('code');
+        $department->name = $request->input('name');
+        $department->save();
+
+        return redirect()->route('departments.index');
     }
 
     /**
@@ -99,6 +109,9 @@ class DepartmentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $department = Department::find($id);
+        $department->delete();
+
+        return redirect()->route('departments.index');
     }
 }

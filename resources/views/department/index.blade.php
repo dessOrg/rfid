@@ -44,8 +44,7 @@
                                       <tr>
                                           <th>Code</th>
                                           <th>Name</th>
-                                          <th>Operation</th>
-                                      </tr>
+                                                                                </tr>
                                   </thead>
 
                                   <tbody>
@@ -56,8 +55,11 @@
                                           <td>{{ $key->name }}</td>
 
                                           <td>
-                                          <a href="{{route ('departments.edit', $key->id) }}" class="btn btn-info pull-left" style="margin-right: 3px;">Edit</a>
+                                          <a href="{{route ('departments.show', $key->id) }}"><i class="fa fa-edit"></i></a>
 
+                                        </td>
+                                        <td>
+                                         <a href="{{ url('department/destroy', $key->id) }}"><i class="fa fa-remove"></i></a>
                                         </td>
                                       </tr>
                                       @endforeach

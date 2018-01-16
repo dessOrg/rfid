@@ -9,6 +9,7 @@ use Validator;
 use App\User;
 use App\Card;
 use App\Log;
+use Auth;
 
 class CardController extends Controller
 {
@@ -78,9 +79,13 @@ class CardController extends Controller
      */
     public function show($id)
     {
+        if(Auth::user()->isActive == true) {
         $card = Card::where('user_id', '=', $id)->first();
         $logs = Log::where('card_id', '=', $card->id)->get();
         return view('tags.edit', compact('card', 'logs'));
+        }else {
+        return view('tags.edit');
+        }
     }
 
     /**

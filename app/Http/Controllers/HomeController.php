@@ -65,6 +65,24 @@ class HomeController extends Controller
 
     return Redirect::to('/');
 
+    }
+
+public function getcard($id) {
+
+    $card = Card::find($id);
+    return view('users.update', compact('card'));
+}
+
+public function updatecard(Request $request) {
+    $this->validate($request, 
+        ['tagno' => 'required|max:100', 'id' => 'required']);
+
+    $id = $request->input('id');
+    $card = Card::find($id);
+    $card->tagno = $request->input('tagno');
+    $card->save();
+
+    return Redirect::to('card'. $id);
 }
 
 public function deactivate($id) {
